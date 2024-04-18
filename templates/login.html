@@ -1,0 +1,30 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="icon" href="{{ url_for('static', filename='hits.png') }}">
+    <style></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <center><img src="../static/HITS.png" width="100px" height="100px"/><br><span class="mrs_title">Music <b style="color: white;margin-left:5px ;margin-right:5px ;">Recommendation</b> System</span></center>
+    <h1 class="h1">Login</h1>
+    <center>
+    <form action="/login" method="post">
+        <div class="form">
+        <label for="username" class="label">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password"  class="label">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit"  class="button sb" value="Login"><br>
+        <span style="font-weight:800;font-size:11px;font-family: Verdana, Geneva, Tahoma, sans-serif;">Create an account <span><a href="/">Sign Up</a></span></span>
+        
+    </div>
+    </form>
+</center>
+</body>
+</html>

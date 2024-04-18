@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followed Users</title>
+</head>
+<body>
+    <h1>Users You Are Following</h1>
+      <ul>
+    {% for followed_user in followed_users %}
+        <li>{{ followed_user[0] }} <a href="{{ url_for('unfollow', username=followed_user[0]) }}">Unfollow</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" type="icon" href="{{ url_for('static', filename='hits.png') }}">
+    <style></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <center><img src="../static/HITS.png" width="100px" height="100px"/><br><span class="mrs_title">Music <b style="color: white;margin-left:5px ;margin-right:5px ;">Recommendation</b> System</span></center>
+    <h1 class="h1">Sign Up</h1><center>
+    <form action="/signup" method="post" enctype="multipart/form-data">
+        <div class="form">
+        <label for="name" class="label">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="username" class="label">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password" class="label">Password:</label>
+        <input type="password" id="password" name="password" required><br/>
+      
+        <label for="age" class="label">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="country" class="label">Country:</label>
+        <input type="text" id="country" name="country" required><br><br>
+        <label for="profile_picture" class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profile Picture:</label><br>
+        <input type="file" class="button" id="profile_picture" name="profile_picture"><br>
+      
+        <label for="sex" class="label">Sex:</label>
+        <select id="sex" name="sex" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="email" class="label">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="relationship_status" class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relationship Status:</label>
+        <select id="relationship_status" name="relationship_status" required>
+            <option value="Heartbroken">Heartbroken</option>
+            <option value="In love">In love</option>
+            <option value="Others">Others</option>
+        </select><br><br>
+
+        <label for="preferred_genres" class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preferred Genres:</label><br>
+        <div class="checkbox">
+        <input type="checkbox" id="pop" name="preferred_genres" value="pop">
+        <label for="pop">Pop</label><br>
+      
+        <input type="checkbox" id="hip-hop" name="preferred_genres" value="hip-hop">
+        <label for="hip-hop">Hip-Hop</label><br>
+        <input type="checkbox" id="gospel" name="preferred_genres" value="gospel">
+        <label for="gospel">Gospel</label><br>
+       
+        <input type="checkbox" id="rap" name="preferred_genres" value="rap">
+        <label for="rap">Rap</label><br>
+        <input type="checkbox" id="r-n-b" name="preferred_genres" value="r-n-b">
+        <label for="r-n-b">RnB</label><br>
+        <input type="checkbox" id="afrobeat" name="preferred_genres" value="afrobeat">
+        <label for="Afrobeat">Afrobeat</label><br>
+    </div>
+    <br>
+        <input type="submit" class="button sb" value="Sign Up">
+        <br>
+        <span style="font-weight:800;font-size:11px;font-family: Verdana, Geneva, Tahoma, sans-serif;">Already have an account ? <span><a href="/login">Log In</a></span></span>
+        
+    </div>
+    </form>
+</center>
+</body>
+</html>

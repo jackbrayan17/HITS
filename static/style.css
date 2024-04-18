@@ -1,0 +1,223 @@
+body {
+    background-color: green;
+}
+.mrs_title{
+    position: relative;
+    bottom: 25px;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.form a:any-link{
+    color: white;
+    text-decoration: none;
+}
+.form a:hover{
+    color: green;
+}
+.h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 25%;
+}
+.song {
+    display: inline-block; 
+    margin-right: 10px; 
+}
+.form {
+    display: flex;
+    width: 50%;
+    max-width: 400px;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 30px 30px 30px 30px;
+    border-radius: 15px;
+    background-color: rgba(253, 118, 7, 0.651);
+
+}
+.form .label {
+    position: relative;
+    right: 140px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.button.sb {
+    width: 50%;
+    font-weight: 800;
+    height: 35px;
+    background-color: green;
+    border: 1px dashed rgba(248, 247, 246, 0.966);
+}
+.checkbox label {
+    color: white;
+    font-weight: 100;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    
+}
+input {
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+select {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    height: 25px;
+}
+.welc {
+    padding: 5px 5px 5px 5px;
+    max-width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: rgba(253, 118, 7, 0.651);
+font-size: 10px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.welc span {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-transform: capitalize;
+}
+.logout:any-link {
+color: white;
+text-decoration: none;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 14px;
+}
+.logout:hover{
+    color: orangered;
+}
+.search a:any-link{
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+.search a:hover{
+    color: orangered;
+}
+.search {
+    margin-bottom: 20px;
+    padding: 5px 25px 5px 25px;
+    width: 190px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.562);
+}
+.recommendations button {
+    width: 100px;
+    font-weight: 800;
+    height: 35px;
+    background-color: green;
+    border: 1px dashed rgba(248, 247, 246, 0.966);
+
+}
+.recommendations .genre {
+    color: orangered;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.recommendations {
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.562);
+}
+.user-actions {
+    margin-top: 10px;
+    max-width: fit-content;
+display: flex;
+justify-content: center;
+flex-direction: row;
+padding: 15px 15px 15px 15px ;
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.562);
+}
+.user-actions ul {
+    list-style-type: none;
+    
+    font-family: 'Courier New', Courier, monospace;
+}
+.user-actions button {
+    width: 70px;
+    height: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    border-radius: 35px;
+    padding: 2px 2px 2px 2px ;
+
+}
+.user-actions h3 {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.searchinp{
+width: 250px;
+height: 35px;
+border: 1px dotted orangered;
+}
+.searchbtn {
+height: 35px;
+width: 100px;
+border: 1px solid transparent;
+border-radius: 10px;
+background-color: orangered;
+cursor: pointer;
+
+color: white;
+}
+.unhitbtn {
+border: 1px dashed green;
+color: green;
+}
+.search-results {
+    background-color: rgba(255, 255, 255, 0.562);
+    width: fit-content;
+    padding: 1px 10px 10px 10px;
+    margin-top: 10px;
+    height: fit-content;
+    border-radius: 10px;
+}
+.unhitbtn:hover{
+    border: 1px dashed white;
+    background-color: green;
+    color: white;
+}
+.hitbtn.searchpg{
+    background-color: white;
+    border-radius: 10px;
+    color: green;
+  
+}
+.hitbtn{
+    border: 1px dashed white;
+    background-color: green;
+    color: white;
+}
+.hitbtn:hover{
+    border: 1px dashed green;
+color: green;
+background-color: white;
+}
+.follow_card {
+    padding: 10px 10px 10px 10px ;
+    border-radius: 20px;
+    background-color: rgba(253, 118, 7, 0.651);
+    text-align: start;
+    text-transform: capitalize;
+    overflow-x: auto;
+}
+.followx_card{
+    text-align: start;
+    text-transform: capitalize;
+    padding: 10px 10px 10px 10px ;
+    border-radius: 20px;
+    background-color: rgba(218, 98, 1, 0.685); 
+    overflow-x: auto;
+
+}
