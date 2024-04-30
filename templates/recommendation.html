@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HITS</title>
+    <link rel="icon" type="icon" href="{{ url_for('static', filename='hits.png') }}">
+    <style></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <center><img src="../static/HITS.png" width="100px" height="100px"/><br><span class="mrs_title">Music <b style="color: white;margin-left:5px ;margin-right:5px ;">Recommendation</b> System</span></center>
+    <a href="/logout" class="logout" style="position: relative;bottom: 120px;">Log Out</a> 
+<div class="search"><a href="/search_users">search...</a></div>
+
+<div class="container">
+    <div class="welc"><h1>Welcome, <span>{{ username }}<img src="{{ url_for('static', filename='profile_pictures/' + user_profile) }}" width="0px" height="0px" alt="">
+!</h1></div> <!-- Display the username -->
+   
+    <div class="recommendations">
+        {% if recommendations %}
+            {% set genres = {} %}
+            {% for song in recommendations %}
+                {% set genre = song.genre %}
+                {% if genre not in genres %}
+                    {% set _ = genres.update({genre: []}) %}
+                {% endif %}
+                {% set _ = genres[genre].append(song) %}
+            {% endfor %}
+            {% for genre, songs in genres.items() %}
+                <h3 class="genre">{{ genre }}</h3>
+                <div class="song-list" id="{{ genre|lower }}-songs">
+                    {% for song in songs[:30] %}
+                    <div class="song">
+                        <iframe class="iframe" src="https://open.spotify.com/embed/track/{{ song.track_id }}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if songs|length >= 31 %}
+                <button onclick="showMore('{{ genre|lower }}')">More +</button>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No recommendations available.</p>
+        {% endif %}
+    </div>
+</div>
+<center>
+<div class="user-actions">
+    <div class="follow_card">
+        <h3>&nbsp;&nbsp;&nbsp;My Followeds</h3>
+    <ul>
+        {% for followed_user in followed_users %}
+        <li>{{ followed_user[0] }} <a href="{{ url_for('unfollow', username=followed_user[0]) }}"><button  class="unhitbtn" >Unhit -</button> </a></li>
+        <li>-------------------</li>
+        {% endfor %}
+    </ul>
+</div>&nbsp;&nbsp;&nbsp;
+    <div class="followx_card">
+    <h3>&nbsp;&nbsp;&nbsp;My Followers</h3>
+    <ul>
+        {% for follower_user in follower_users %}
+        <li style="display: flex;flex-direction: row;">{{ follower_user[0] }} &nbsp;<form action="{{ url_for('follow_user', username=follower_user[0]) }}" method="post"><button type="submit" class="hitbtn">Hit +</button></form></li>
+        <li>-------------------</li>
+        {% endfor %}
+    </ul>
+</div>
+</div></center>
+<div class="follower-recommendations">
+    <h2>Follower Recommendations</h2>
+    <div class="recommendations">
+        {% if follower_recommendation %}
+            {% set genres = {} %}
+            {% for song in follower_recommendation %}
+                {% set genre = song.genre %}
+                {% if genre not in genres %}
+                    {% set _ = genres.update({genre: []}) %}
+                {% endif %}
+                {% set _ = genres[genre].append(song) %}
+            {% endfor %}
+            {% for genre, songs in genres.items() %}
+                <h3>{{ genre }}</h3>
+                <div class="song-list" id="{{ genre|lower }}-songs">
+                    {% for song in songs[:7] %}
+                    <div class="song">
+                        {% if recommendations.track_id %}
+    <iframe class="iframe" src="https://open.spotify.com/embed/track/{{ recommendation.track_id }}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+{% else %}
+    <p>Track not available</p>
+{% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if songs|length > 5 %}
+                <button onclick="showMore('{{ genre|lower }}')">More</button>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No recommendations available.</p>
+        {% endif %}
+    </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+    function showMore(genre) {
+        var songList = document.getElementById(genre + "-songs");
+        var songs = songList.querySelectorAll('.song');
+        for (var i = 5; i < songs.length; i++) {
+            songs[i].style.display = 'block';
+        }
+        var moreButton = songList.querySelector('button');
+        moreButton.style.display = 'none';
+    }
+</script>
+</body>
+</html>

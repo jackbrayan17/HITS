@@ -1,0 +1,33 @@
+<!-- search_users.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Users</title>
+    <link rel="icon" type="icon" href="{{ url_for('static', filename='hits.png') }}">
+    <style></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <center><img src="../static/HITS.png" width="100px" height="100px"/><br><span class="mrs_title">Music <b style="color: white;margin-left:5px ;margin-right:5px ;">Recommendation</b> System</span></center>
+   
+    <div class="container">
+        <h1 style="font-family: Arial, Helvetica, sans-serif;">Search Users</h1>
+        <form action="{{ url_for('search_users') }}" method="post">
+            <input  class="searchinp" type="text" name="search_query" placeholder="Enter username">
+            <button type="submit" class="searchbtn">Search</button>
+        </form>
+        <div class="search-results">
+            <h2>Search Results</h2>
+            <ul>
+                {% for user in search_results %}
+                    <li style="display: flex;flex-direction: row;">{{ user[1] }} &nbsp;<form action="{{ url_for('follow_user', username=user[1]) }}" method="post">
+<button type="submit" class="hitbtn searchpg">Hit +</button></form></li>
+<li style="  list-style-type: none;">-------------------------------------------</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
